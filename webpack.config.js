@@ -32,5 +32,13 @@ module.exports = {
   },
   devtool: 'source-map',
   // https://webpack.js.org/configuration/mode
-  mode: 'development'
-};
+  mode: 'development',
+  devServer: {
+    port: 8080,
+    contentBase: path.resolve(__dirname, 'src'),
+    hot: true
+  },
+}
+
+
+

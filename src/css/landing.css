@@ -1,0 +1,36 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-image: url('https://images.pexels.com/photos/507410/pexels-photo-507410.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+}
+
+.offscreen {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+
+}
+
+/* header */
+.header {
+  display: flex;
+  justify-content: space-between
+}
+
+.header__content {
+  display: flex;
+}
+.header__search-icon {
+  color: #fff;
+  font-size: 36px;
+}
+
+.header__search-input {
+  border: 0;
+  background: transparent;
+  border-bottom: 1px solid black;
+  opacity: 0.5;
+}

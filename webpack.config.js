@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin'); 
-const CleanWebpackPlugin = require('clean-webpack-plugin'); 
+const { CleanWebpackPlugin }  = require('clean-webpack-plugin'); 
 const webpack = require('webpack');
 
 출처: https://ibrahimovic.tistory.com/47 [Web Standard]
@@ -12,7 +12,7 @@ module.exports = {
   // https://webpack.js.org/configuration/output/#outputpath
   // https://webpack.js.org/configuration/output/#outputfilename
   output: {
-    path: path.resolve(__dirname, 'dist/js'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
   // https://webpack.js.org/configuration/module
@@ -37,16 +37,11 @@ module.exports = {
   devtool: 'source-map',
   // https://webpack.js.org/configuration/mode
   mode: 'development',
-  // devServer: {
-  //   port: 8080,
-  //   contentBase: path.resolve(__dirname, 'src/js'),
-  //   hot: true
-  // },
-  // plugins: [ 
-  //   new HtmlWebpackPlugin({ title: 'Hot Module Replacement',template: './index.html',scriptLoading:"defer" }), 
-  //   new webpack.HotModuleReplacementPlugin()
-  // ],
-
+  plugins: [ 
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({ title: 'Hot Module Replacement',template: './index.html',scriptLoading:"defer" }), 
+    new webpack.HotModuleReplacementPlugin()
+  ],
 }
 
 

@@ -16,6 +16,10 @@
   animation: pop .4s ease-in-out 1;
 }
 
+.hide {
+  display: none;
+}
+
 .weather__content {
   position: relative;
   color: #222222;

@@ -1,0 +1,46 @@
+.header__weather {
+  background-color: darkgray;
+}
+
+.weather__content {
+  position: relative;
+}
+
+.weather__button {
+  background-color: transparent;
+  border-style: none;
+  text-align: right;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  outline: 0px;
+  cursor: pointer;
+}
+
+.weather__button-icon,
+.weather__stat-number,
+.weather__degree {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.weather__city {
+  font-size: .8rem;
+  color: #ffffff;
+}
+
+.weather__app-info {
+  font-size: 4rem;
+}
+
+.forecast__list {
+  list-style: none;
+}
+
+.forecast__list-items {
+  display: inline;
+}
+
+.forecast__label {
+  font-size: 1.5rem;
+}

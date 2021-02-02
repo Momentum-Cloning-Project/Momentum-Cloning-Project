@@ -1,5 +1,9 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin'); 
+const CleanWebpackPlugin = require('clean-webpack-plugin'); 
+const webpack = require('webpack');
 
+출처: https://ibrahimovic.tistory.com/47 [Web Standard]
 module.exports = {
   // entry file
   // https://webpack.js.org/configuration/entry-context/#entry
@@ -33,11 +37,16 @@ module.exports = {
   devtool: 'source-map',
   // https://webpack.js.org/configuration/mode
   mode: 'development',
-  devServer: {
-    port: 8080,
-    contentBase: path.resolve(__dirname, 'src'),
-    hot: true
-  },
+  // devServer: {
+  //   port: 8080,
+  //   contentBase: path.resolve(__dirname, 'src/js'),
+  //   hot: true
+  // },
+  // plugins: [ 
+  //   new HtmlWebpackPlugin({ title: 'Hot Module Replacement',template: './index.html',scriptLoading:"defer" }), 
+  //   new webpack.HotModuleReplacementPlugin()
+  // ],
+
 }
 
 

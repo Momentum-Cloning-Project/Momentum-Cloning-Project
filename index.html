@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="./src/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script defer src='./src/js/todos/todos.js'></script>
+  <link rel="stylesheet" href="./src/img/weather-icons-master/css/weather-icons.min.css">
   <title>Momentum Cloning Project</title>
 </head>
 <body>
@@ -19,7 +20,68 @@
       </form>
     </div>
     <div class="header__weather">
-      <!-- weather api -->
+      
+      <div class="weather__content">
+        <div class="weather__tab">
+          <button class="weather__button">
+            <div class="weather__tab-info">
+              <span class="weather__button-icon"><i class="wi wi-stars"></i></span>
+              <span class="weather__stat-number">-3</span><span class="weather__degree">°</span>
+            </div>
+            <span class="weather__city">Kumhosamga-dong</span>
+          </button>
+        </div>
+        
+        <div class="weather__pop-up">
+          <div class="weather__app active">
+            <section class="weather__current">
+              <header class="weather__current-header">
+                <div class="weather__current-city">Kumhosamga-dong</div>
+                <div class="weather__condition">Light snow</div>
+              </header>
+              <div class="weather__app-info">
+                <span class="app__icon"><i class="wi wi-snow"></i></span>
+                <span class="app__stat-number">-3</span><span class="app__degree">°</span>
+              </div>
+            </section>
+            <section class="weather__forecast">
+              <li class="forecast__list">
+                <ul class="forecast__list-items">
+                  <span class="forecast__label">TUE</span>
+                  <span class="forecast__icon"><i class="wi wi-alien"></i></span>
+                  <span class="forecast__high">-2°</span>
+                  <span class="forecast__low">-2°</span>
+                </ul>
+                <ul class="forecast__list-items">
+                  <span class="forecast__label">TUE</span>
+                  <span class="forecast__icon"><i class="wi wi-alien"></i></span>
+                  <span class="forecast__high">-2°</span>
+                  <span class="forecast__low">-2°</span>
+                </ul>
+                <ul class="forecast__list-items">
+                  <span class="forecast__label">TUE</span>
+                  <span class="forecast__icon"><i class="wi wi-alien"></i></span>
+                  <span class="forecast__high">-2°</span>
+                  <span class="forecast__low">-2°</span>
+                </ul>
+                <ul class="forecast__list-items">
+                  <span class="forecast__label">TUE</span>
+                  <span class="forecast__icon"><i class="wi wi-alien"></i></span>
+                  <span class="forecast__high">-2°</span>
+                  <span class="forecast__low">-2°</span>
+                </ul>
+                <ul class="forecast__list-items">
+                  <span class="forecast__label">TUE</span>
+                  <span class="forecast__icon"><i class="wi wi-alien"></i></span>
+                  <span class="forecast__high">-2°</span>
+                  <span class="forecast__low">-2°</span>
+                </ul>
+              </li>
+            </section>
+          </div>
+        </div>
+      </div>
+      
     </div>
   </header>
   <main>

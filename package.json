@@ -5,6 +5,7 @@
   "main": "index.html",
   "scripts": {
     "build": "webpack -w",
+    "server" : "nodemon server",
     "start": "webpack serve"
   },
   "repository": {

@@ -18,6 +18,14 @@ module.exports = {
   // https://webpack.js.org/configuration/module
   module: {
     rules: [
+      // {
+      //   test: /\.html$/i,
+      //   loader: 'html-loader',
+      // },
+      // {
+      //   test: /\.css$/i,
+      //   use: ["style-loader", "css-loader"],
+      // },
       {
         test: /\.js$/,
         include: [

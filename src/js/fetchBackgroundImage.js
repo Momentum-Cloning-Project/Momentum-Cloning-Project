@@ -1,9 +1,9 @@
+
+
 const displayImage = image => {
     document.querySelector('body').style.backgroundImage = `url(${image})`;
 }
 const displayImageLocationInfo = data => {
-    console.log(data.user);
-
     if(!data.user.location) {
         document.getElementById('location').innerHTML = 'The location information is not provided';
         document.getElementById('photoProvider').innerHTML = data.user.name;

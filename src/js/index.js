@@ -1,9 +1,19 @@
+
+
+
 import weatherHandler from './weather';
+import { getBackgroundImage } from './fetchBackgroundImage';
+import { isAlreadyVisited, checkTodayDate, displayCurrentTime, setTodayDate } from './timer';
+import { mainTodoHandler, removeMainTodo, toggleMainTodo } from './mainTodo';
+import { ACCESS_KEY } from './utils/constants';
+
+if (!isAlreadyVisited() || checkTodayDate()) {
+    setTodayDate();
+    // getBackgroundImage(ACCESS_KEY);
+}
 
 weatherHandler();
-import { getBackgroundImage } from './fetchBackgroundImage';
+displayCurrentTime();
+setInterval(displayCurrentTime, 1000);
 
-//key for background api
-const accessKey = 'dzYWYM-op5xXPLPEvQ23vSxAcXu58CDCL0C-fw_Rzn8';
-
-// getBackgroundImage(accessKey);
+mainTodoHandler();

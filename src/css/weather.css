@@ -1,14 +1,21 @@
+/* user select disabled  */
+.header__weather {
+  user-select: none;
+}
+
 /* pop-up animation */
 @keyframes pop {
   0% { 
     opacity: 0;
     position: absolute;
     top: 70px;
+    right: 10px;
     }
   100% { 
     opacity: 1;
     position: absolute;
     top: 80px;
+    right: 10px;
     }
 }
 
@@ -60,11 +67,11 @@
 }
 
 .weather__app {
-  background-color: #fdfdff;
-  box-sizing: border-box;
   position: absolute;
   top: 80px;
   right: 10px;
+  background-color: #fdfdff;
+  box-sizing: border-box;
   width: 440px;
   border-radius: 5px;
   padding: 20px;
@@ -91,7 +98,9 @@
 }
 
 .weather__app-info {
+  height: 70px;
   font-size: 4rem;
+  margin-bottom: 15px;
 }
 
 .forecast__list {
@@ -105,6 +114,7 @@
 }
 
 .forecast__list-items {
+  cursor: pointer;
   padding: 5px 2px;
   width: 75px;
   height: 32px;

@@ -5,12 +5,13 @@ let minutes = 0;
 let currenTime = 0;
 
 
-const setTodayDate = () => {
+export const setTodayDate = () => {
     localStorage.setItem('today-date', date);
 }
 
-export const getTodayDate = () => {
-    return localStorage.getItem('today-date');
+export const isAlreadyVisited = () => {
+    if (localStorage.getItem('today-date') === null) return false;
+    return true;
 }
 export const checkTodayDate = () => {
     if(String(getCurrentDate()) !== localStorage.getItem('today-date')) {
@@ -25,7 +26,6 @@ export const displayCurrentTime = () => {
     hours = String(hours).length === 1 ? '0' + hours : hours;
     minutes = String(minutes).length === 1 ? '0' + minutes : minutes;
     currenTime = hours + ':' + minutes;
-    setTodayDate();
 
     document.getElementById('currentTime').innerHTML =  currenTime;
 }

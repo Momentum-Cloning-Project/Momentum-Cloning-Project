@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "build": "webpack -w",
-    "server" : "nodemon server",
+    "server": "nodemon server",
     "start": "webpack serve"
   },
   "repository": {
@@ -45,6 +45,8 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "unsplash-js": "^7.0.4"
   }
 }

@@ -1,3 +1,6 @@
+import weatherHandler from './weather';
+
+weatherHandler();
 import { getBackgroundImage } from './fetchBackgroundImage';
 
 //key for background api

@@ -1,6 +1,17 @@
 import { getBackgroundImage } from './fetchBackgroundImage';
+import { getTodayDate, checkTodayDate, displayCurrentTime } from './timer';
+import { mainTodoHandler, removeMainTodo, toggleMainTodo } from './mainTodo';
+import { ACCESS_KEY } from './utils/constants';
 
-//key for background api
-const accessKey = 'dzYWYM-op5xXPLPEvQ23vSxAcXu58CDCL0C-fw_Rzn8';
 
-// getBackgroundImage(accessKey);
+if (getTodayDate() || checkTodayDate()) {
+
+    getBackgroundImage(ACCESS_KEY);
+}
+
+displayCurrentTime();
+setInterval(displayCurrentTime, 1000);
+
+mainTodoHandler();
+
+

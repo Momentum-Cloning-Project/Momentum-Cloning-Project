@@ -7,9 +7,9 @@
 
 - Webpack을 이용한 자바스크립트 모듈 관리 경험
 
-- axios 라이브러리를 활용한 프로미스 기반 HTTP 요청 및 비동기 처리 실습
+- `fetch`와 `async`/`await`를 활용한 프로미스 기반 HTTP 요청 및 비동기 처리 실습
 
-- GitHub, Git-flow를 활용한 협업 경험
+- Git, GitHub를 활용한 협업 경험
 
 ### Momentum 주요 기능 소개
 
@@ -27,14 +27,12 @@
 
 - ESLint
 
-- axios
-
 - Git/GitHub
 
 ### 팀원
 
-- 서민기 @minki607
+- 서민기 [@minki607](https://github.com/minki607)
 
-- 안예인 @ahnanne
+- 안예인 [@ahnanne](https://github.com/ahnanne)
 
-- 이재훈 @dannylee9212
+- 이재훈 [@dannylee9212](https://github.com/dannylee9212)

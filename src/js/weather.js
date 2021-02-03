@@ -2,16 +2,14 @@ import { doc } from "prettier";
 
 const weatherHandler = () => {
   const $weatherBtn = document.querySelector('.weather__button');
-  const $weatherBtnIcon = document.querySelector('.weather__button-icon');
+  const $weatherBtnIcon = document.querySelector('.weather__button-icon > img');
   const $weatherCity = document.querySelector('.weather__city');
   const $weatherApp = document.querySelector('.weather__app');
   const $weatherCurrCity = document.querySelector('.weather__current-city');
   const $weatherCondition = document.querySelector('.weather__condition');
-  const $weatherAppIcon = document.querySelector('.app__icon');
   const $weatherCurrStat = document.querySelector('.weather__stat-number');
   const $appCurrStat = document.querySelector('.app__stat-number');
   const $forecastList = document.querySelector('.forecast__list');
-  const $forecastIcon1 = document.querySelector('.forecast__icon');
 
   // ③
   const setWeatherInfos = weatherInfos => {
@@ -27,39 +25,24 @@ const weatherHandler = () => {
     $appCurrStat.textContent = Math.round(currWeatherInfos.main.temp);
     console.dir(currWeatherInfos);
   };
-  const setWeatherIcons = currWeatherInfos => {
-    // 초기화
-    [...$weatherBtnIcon.firstElementChild.classList].forEach(classAttr => {
-      $weatherBtnIcon.firstElementChild.classList.remove(classAttr);
-    });
-    [...$weatherAppIcon.firstElementChild.classList].forEach(classAttr => {
-      $weatherAppIcon.firstElementChild.classList.remove(classAttr);
-    });
-    [...$forecastIcon1.firstElementChild.classList].forEach(classAttr => {
-      $forecastIcon1.firstElementChild.classList.remove(classAttr);
-    });
 
-    // 날씨에 해당하는 아이콘 추가
-    $weatherBtnIcon.firstElementChild.classList.add('wi');
-    $weatherBtnIcon.firstElementChild.classList.add(`wi-day-${(currWeatherInfos.weather[0].main).toLowerCase()}`);
-    $weatherAppIcon.firstElementChild.classList.add('wi');
-    $weatherAppIcon.firstElementChild.classList.add(`wi-day-${(currWeatherInfos.weather[0].main).toLowerCase()}`);
-    $forecastIcon1.firstElementChild.classList.add('wi');
-    $forecastIcon1.firstElementChild.classList.add(`wi-day-${(currWeatherInfos.weather[0].main).toLowerCase()}`);
+  const setWeatherIcons = currWeatherInfos => {
+    const getIconUrl = `http://openweathermap.org/img/wn/${currWeatherInfos.weather[0].icon}@2x.png`;
+    $weatherBtnIcon.setAttribute('src', getIconUrl);
   };
 
   // ②
-  const getForecast = async (lat, lon) => {
-    const res = await fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=a0542651a9f965001a4d891288d5dee2&units=metric`);
-    const weatherInfos = await res.json();
-    setWeatherInfos(weatherInfos);
-  };
-
   const getCityWeather = async (lat, lon) => {
     const res = await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=a0542651a9f965001a4d891288d5dee2&units=metric`);
     const currWeatherInfos = await res.json();
     setCurrWeatherInfos(currWeatherInfos);
     setWeatherIcons(currWeatherInfos);
+  };
+
+  const getForecast = async (lat, lon) => {
+    const res = await fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=a0542651a9f965001a4d891288d5dee2&units=metric`);
+    const weatherInfos = await res.json();
+    setWeatherInfos(weatherInfos);
   };
 
   // ①

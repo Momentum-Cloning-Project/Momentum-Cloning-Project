@@ -10,7 +10,7 @@ export const setTodayDate = () => {
 }
 
 export const isAlreadyVisited = () => {
-    if (localStorage.getItem('today-date') === null) return false;
+    if (localStorage.getItem('today-date') !== null) return false;
     return true;
 }
 export const checkTodayDate = () => {

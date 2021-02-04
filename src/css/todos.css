@@ -22,8 +22,7 @@
   display: block;
   width: 250px;
   min-height: 100px;
-  max-height: 500px;
-  overflow: scroll;
+  max-height: 350px;
   padding: 15px 25px;
   background-color: #fff;
   color: #fff;
@@ -32,6 +31,23 @@
   right: 20px;
   border-radius: 0.5em;
 }
+
+.sub-todo__popup:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 7px solid transparent;
+    border-top-color: #fff;
+    border-bottom: 0;
+    margin-left: 120px;
+    margin-bottom: -7px;
+}
+
+
+
 
 .sub-todo__menu {
   display: flex;
@@ -46,33 +62,47 @@
   font-size: 1.2rem;
 }
 
+.show-dropdown {
+  background-color: #fff;
+}
 .sub-todo__selected:hover .show-dropdown {
   background-color: #ededed;
 }
 
+.sub-todo__popup i{
+  position: static;
+  font-size: 0.7rem;
+  color: #99999a;
+  
+}
+.show-dropdown {
+  margin-left: 5px;
+}
 .icon-wrap {
   border-radius: 50%;
-  padding: 5px;
   border: none;
   outline: none;
-  cursor: pointer;
-  background-color: #fff;
-  color: #666;
-  font-size: 0.7rem;
+  cursor: pointer; 
+  padding: 2px 5px;
 }
 
-.icon-wrap:hover {
-  background-color: #ededed;
+.icon-wrap i {
+  margin: 0;
 }
+
 
 
 .more-option {
   position: absolute;
   top: 15px;
   right: 20px;
-  padding: 5px 6px;
+  background-color: #fff;
+
 }
 
+.more-option:hover {
+  background-color: #ededed;
+}
 
 .sub-todo__drop-down {
   display: none;
@@ -120,6 +150,8 @@
 .sub-todo__list {
   color: #7c7c7c;
   margin-top: 15px;
+  overflow-y: auto;
+  max-height: 250px;
 }
 
 /* todo 리스트 */
@@ -155,6 +187,10 @@
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+.sub-todo__empty button i {
+  margin: 0;
 }
 
 .sub-todo__go-to-button {
@@ -196,6 +232,20 @@
   font-size: 0.7rem;
   float: right;
 }
+
+.todo-item > .remove-todo{
+  display: none;
+}
+
+.todo-item > .remove-todo:hover {
+  color: red;
+}
+
+.todo-item:hover .remove-todo{
+  display: block;
+  cursor:pointer
+}
+
 
 
 

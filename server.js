@@ -30,4 +30,10 @@ app.patch('/todos/:id', (req, res) => {
   res.send(todos);
 });
 
+app.delete('/todos/:id', (req, res) => {
+  const { id } = req.params;
+  todos = todos.filter(todo => todo.id !== +id);
+  return res.send(todos);
+});
+
 app.listen(PORT, () => console.log(`server running on ${PORT}`));

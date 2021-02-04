@@ -7,24 +7,22 @@
 @keyframes pop {
   0% { 
     opacity: 0;
-    position: absolute;
-    top: 70px;
-    right: 10px;
+    transform: translate3d(70px, 10px);
     }
   100% { 
     opacity: 1;
-    position: absolute;
-    top: 80px;
-    right: 10px;
+    transform: translate3d(80px, 10px);
     }
 }
-
+.transition {
+  transition: all 0.5s;
+}
 .weather__pop-up > .active {
   animation: pop .4s ease-in-out 1;
 }
 
 .weather__pop-up > .hide {
-  display: none;
+  opacity: 0;
 }
 
 .weather__content {

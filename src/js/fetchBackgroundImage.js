@@ -14,13 +14,17 @@ const displayImageLocationInfo = data => {
 
 }
 const obtainImageFromServer = async ACCESS_KEY => {
-    const backgroundImage = await fetch(`https://api.unsplash.com/photos/random?client_id=${ACCESS_KEY}`, {
-        params: {
-            count:30
-        }
-    })
-    const imageInfo = await backgroundImage.json();
-    localStorage.setItem('image-info', JSON.stringify(imageInfo));
+    try {
+        const backgroundImage = await fetch(`https://api.unsplash.com/photos/random?client_id=${ACCESS_KEY}`, {
+            params: {
+                count:30
+            }
+        })
+        const imageInfo = await backgroundImage.json();
+        localStorage.setItem('image-info', JSON.stringify(imageInfo));
+    } catch (error) {
+        console.log(error)
+    }
 }
 const backgroundImageHandler = async ACCESS_KEY => {
     if (isAlreadyVisited() || checkTodayDate()) await obtainImageFromServer(ACCESS_KEY);
@@ -30,10 +34,7 @@ const backgroundImageHandler = async ACCESS_KEY => {
 }
 
 export const getBackgroundImage = ACCESS_KEY => {
-    try {
-        backgroundImageHandler(ACCESS_KEY);
-    } catch (error) {
-        console.log(error)
-    }
+    backgroundImageHandler(ACCESS_KEY);
+
 }
 

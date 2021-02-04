@@ -74,6 +74,7 @@ const weatherHandler = () => {
   [...$forecastList.children].forEach(liNode => {
     liNode.onclick = () => {
       if (liNode.classList.contains('selected')) return;
+      
       [...$forecastList.children].forEach(li => {
         if (li === liNode) li.classList.add('selected');
         else li.classList.remove('selected');

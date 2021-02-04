@@ -24,6 +24,8 @@ const subTodoHandler = () => {
     todoState = DEFAULT_STATE;
     $createBtn.style.opacity = 0;
     $inputTodo.classList.remove('hidden');
+    console.log($inputTodo)
+    $inputTodo.focus();
   }
 
   const render = () => {
@@ -75,33 +77,45 @@ const subTodoHandler = () => {
 
   const generateId = () => (todos.length ? Math.max(...todos.map(todo => todo.id)) + 1 : 1);
 
-  const getTodos = () => {
-    fetch(`${URL}/todos`)
-    .then(res => res.json())
-    .then(updateTodos)
-    .catch(console.error);
+  const getTodos = async () => {
+    try {
+      const res = await fetch(`${URL}/todos`);
+      const todo = await res.json();
+      updateTodos(todo);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
-  const addTodo = content => {
-    fetch(`${URL}/todos`, config('POST',  { id: generateId(), content, completed: false }))
-    .then(res => res.json())
-    .then(updateTodos)
-    .catch(console.error);
+  const addTodo = async content => {
+    try {
+      const res = await fetch(`${URL}/todos`, config('POST',  { id: generateId(), content, completed: false }));
+      const todo = await res.json();
+      updateTodos(todo);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
-  const toggleTodo = id => {
-    const { completed } = todos.find(todo => todo.id === +id);
-    fetch(`${URL}/todos/${id}`, config('PATCH', { completed }))
-    .then(res => res.json())
-    .then(updateTodos)
-    .catch(console.error);
+  const toggleTodo = async id => {
+    try {
+      const { completed } = todos.find(todo => todo.id === +id); 
+      const res = await fetch(`${URL}/todos/${id}`, config('PATCH', { completed }));
+      const todo = await res.json();
+      updateTodos(todo);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
-  const removeTodo = id => {
-    fetch(`${URL}/todos/${id}`, config('DELETE'))
-    .then(res => res.json())
-    .then(updateTodos)
-    .catch(console.error);
+  const removeTodo = async id => {
+    try {
+      const res = await fetch(`${URL}/todos/${id}`, config('DELETE'));
+      const todo = await res.json();
+      updateTodos(todo);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   window.onload = getTodos;
@@ -125,8 +139,8 @@ const subTodoHandler = () => {
   };
 
   $todos.onclick = e => {
-    if (e.target.classList.contains('sub-todo__new-button')) createNew();
-    if (!e.target.matches('.remove-todo')) return;
+    if (e.target.classList.contains('sub-todo__new-button')) createNew(); // 새로운 투두 만들때 버튼 클릭
+    if (!e.target.matches('.remove-todo')) return; // remove-todo를 제외한 요소를 클릭했을 경우는 무시
     removeTodo(e.target.parentNode.id);
   };
   

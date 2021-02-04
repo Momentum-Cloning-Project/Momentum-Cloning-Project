@@ -1,3 +1,11 @@
+@keyframes popTodo {
+  0% { 
+    opacity: 0;
+    }
+  100% { 
+    opacity: 1;
+    }
+}
 
 .sub-todo__button {
   background-color: transparent;
@@ -19,7 +27,6 @@
 
 
 .sub-todo__popup {
-  display: block;
   width: 250px;
   min-height: 100px;
   max-height: 350px;
@@ -46,9 +53,15 @@
     margin-bottom: -7px;
 }
 
-
-
-
+.sub-todo__popup.active {
+  animation: popTodo 0.4s ease-in-out 1;
+}
+.sub-todo__popup.hide {
+  opacity: 0;
+}
+.transition {
+  transition: all 0.4s;
+}
 .sub-todo__menu {
   display: flex;
   justify-content: space-between;

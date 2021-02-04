@@ -19,11 +19,11 @@
     }
 }
 
-.active {
+.weather__pop-up > .active {
   animation: pop .4s ease-in-out 1;
 }
 
-.hide {
+.weather__pop-up > .hide {
   display: none;
 }
 
@@ -46,7 +46,7 @@
 
 .weather__tab-info {
   float: right;
-  width: 70px;
+  width: 90px;
 }
 
 .weather__button-icon,
@@ -58,6 +58,18 @@
 
 .weather__button-icon {
   margin-right: 3px;
+}
+
+.weather__button-icon > img {
+  width: 40px;
+  height: 40px;
+  vertical-align: bottom;
+}
+
+.app__stat-number-pm,
+.app__degree-pm {
+  font-size: 2.7rem;
+  color: #9a9a9b;
 }
 
 .weather__city {
@@ -90,17 +102,26 @@
 
 .weather__current-city {
   font-size: 1.2rem;
+  line-height: 1.5rem;
 }
 
 .weather__condition {
   margin-bottom: 10px;
+  text-transform: capitalize;
   color: #9a9a9b;
 }
 
 .weather__app-info {
   height: 70px;
-  font-size: 4rem;
+  font-size: 3.5rem;
   margin-bottom: 15px;
+}
+
+.app__icon > img {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  vertical-align: bottom;
 }
 
 .forecast__list {
@@ -113,16 +134,28 @@
   font-size: .7rem;
 }
 
+.forecast__list > .selected {
+  background-color: #eeefef;
+  border-radius: 5px;
+}
+
 .forecast__list-items {
   cursor: pointer;
   padding: 5px 2px;
   width: 75px;
-  height: 32px;
+  height: 42px;
   text-align: center;
 }
 
 .forecast__icon {
   font-size: 1rem;
+}
+
+.forecast__icon > img {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  vertical-align: bottom;
 }
 
 .forecast__label {

@@ -92,40 +92,49 @@
   </main>
   <footer class="footer">
     <nav class="footer__nav">
-      <div class="background-image-info">
-        <i class="fa fa-cog"></i>
-        <span class='location' id="location">Location information is not provided</span>
-        <span class='photo-provider'id='photoProvider'>Eleven Moore</span>
-        <span>/ unsplash</span>  
-      </div>
-      <div class="famous-quote">
-        <q>"One small positive though can change your whole day"</q>
-      </div>
-      <div class="todos">Todos</div>
-        <section class="sub-todo">
-          <button class="sub-todo__button">Todo</button>
-          <div class="sub-todo__popup"> 
-            <div class="sub-todo__menu">
-              <span class="sub-todo__selected">
-                <button class="show-dropdown icon-wrap">
-                  <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                </button>
-              </span> 
-            </div>
-            <div class="sub-todo__drop-down">
-              <button id ="Inbox">Inbox 0</button>
-              <button id="Today">Today 0 </button>
-              <button id="Done">Done 0</button> 
-              <button>+ New List</button>  
-            </div>      
-            <ul class="sub-todo__list">
-              <!--투두 생성-->
-            </ul>
-          <input class="sub-todo__input" placeholder="New Todo" />
-          <button class="more-option icon-wrap">
-            <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-          </button>
+      <ul class="footer__menu">
+        <li class="footer__menu-item">
+          <div class="background-image-info">
+            <i class="fa fa-cog"></i>
+            <span class='location' id="location">Location information is not provided</span>
+            <span class='photo-provider'id='photoProvider'>Eleven Moore</span>
+            <span>/ unsplash</span>  
           </div>
+        </li>
+        <li class="footer__menu-item">
+          <div class="famous-quote">
+            <q>"One small positive though can change your whole day"</q>
+          </div>
+        </li>
+        <li class="footer__menu-item">
+          <!-- todos -->
+          <section class="sub-todo">
+            <button class="sub-todo__button">Todo</button>
+            <div class="sub-todo__popup"> 
+              <div class="sub-todo__menu">
+                <span class="sub-todo__selected">
+                  <button class="show-dropdown icon-wrap">
+                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                  </button>
+                </span> 
+              </div>
+
+              <div class="sub-todo__drop-down">
+                <button id ="Inbox">Inbox <span class="todo-count"></span></button>
+                <button id="Today">Today <span class="todo-count"></span></button>
+                <button id="Done">Done <span class="todo-count"></span></button> 
+                <button>+ New List</button>  
+              </div>      
+
+              <ul class="sub-todo__list">
+                <!--투두 생성-->
+              </ul>
+          
+            <input class="sub-todo__input" placeholder="New Todo" />
+            <button class="more-option icon-wrap">
+              <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+            </button>
+          </div>    <!--팝업 끝-->
         </section>
     </nav>
   </footer>

@@ -1,9 +1,21 @@
+<<<<<<< HEAD
 @keyframes popTodo {
   0% { 
     opacity: 0;
     }
   100% { 
     opacity: 1;
+=======
+/* pop-up animation */
+@keyframes pop {
+  0% { 
+    opacity: 0;
+    transform: translate3d(70px, 10px);
+    }
+  100% { 
+    opacity: 1;
+    transform: translate3d(80px, 10px);
+>>>>>>> 0026a140226e973fc6e2060aa6cfd2e02fdb5e5f
     }
 }
 

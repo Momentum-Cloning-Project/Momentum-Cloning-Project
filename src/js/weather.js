@@ -65,15 +65,21 @@ const weatherHandler = () => {
 
   // 팝업
   $weatherBtn.onclick = () => {
+
+
     if ($weatherApp.classList.contains('active')) {
+      $weatherApp.classList.add('transition');
       $weatherApp.classList.replace('active', 'hide');
-    } else $weatherApp.classList.replace('hide', 'active');
+    } else {
+      $weatherApp.classList.replace('hide', 'active');
+    }
   };
 
   // 요일 선택
   [...$forecastList.children].forEach(liNode => {
     liNode.onclick = () => {
       if (liNode.classList.contains('selected')) return;
+      
       [...$forecastList.children].forEach(li => {
         if (li === liNode) li.classList.add('selected');
         else li.classList.remove('selected');

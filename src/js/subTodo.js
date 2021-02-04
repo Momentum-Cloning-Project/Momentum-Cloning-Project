@@ -1,5 +1,6 @@
 const subTodoHandler = () => {
-
+  const $openTodoBtn = document.querySelector(".sub-todo__button");
+  const $subTodoPop = document.querySelector(".sub-todo__popup");
   const $todoListMenu = document.querySelector(".sub-todo__menu");
   const $dropdown = document.querySelector(".sub-todo__drop-down");
   const $inputTodo = document.querySelector(".sub-todo__input");
@@ -72,7 +73,7 @@ const subTodoHandler = () => {
   const config = (method, payload) => ({
     method,
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload),
+    body: JSON.stringify(payload)
   });
 
   const generateId = () => (todos.length ? Math.max(...todos.map(todo => todo.id)) + 1 : 1);
@@ -119,6 +120,13 @@ const subTodoHandler = () => {
   }
 
   window.onload = getTodos;
+
+  $openTodoBtn.onclick = () => {
+    if ($subTodoPop.classList.contains('active')) {
+      $subTodoPop.classList.add('transition');
+      $subTodoPop.classList.replace('active', 'hide');
+    } else $subTodoPop.classList.replace('hide', 'active');
+  }
 
   $dropdown.onclick = e => {
     todoState = (e.target.classList.contains('todo-count') ? e.target.parentNode.id : e.target.id);

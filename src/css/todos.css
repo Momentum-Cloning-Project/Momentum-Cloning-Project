@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+@keyframes popTodo {
+  0% { 
+    opacity: 0;
+    }
+  100% { 
+    opacity: 1;
+=======
 /* pop-up animation */
 @keyframes pop {
   0% { 
@@ -7,6 +15,7 @@
   100% { 
     opacity: 1;
     transform: translate3d(80px, 10px);
+>>>>>>> 0026a140226e973fc6e2060aa6cfd2e02fdb5e5f
     }
 }
 
@@ -30,7 +39,6 @@
 
 
 .sub-todo__popup {
-  display: block;
   width: 250px;
   min-height: 100px;
   max-height: 350px;
@@ -57,9 +65,15 @@
     margin-bottom: -7px;
 }
 
-
-
-
+.sub-todo__popup.active {
+  animation: popTodo 0.4s ease-in-out 1;
+}
+.sub-todo__popup.hide {
+  opacity: 0;
+}
+.transition {
+  transition: all 0.4s;
+}
 .sub-todo__menu {
   display: flex;
   justify-content: space-between;

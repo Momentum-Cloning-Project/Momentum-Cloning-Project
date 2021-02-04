@@ -7,12 +7,37 @@ const weatherHandler = () => {
   const $weatherApp = document.querySelector('.weather__app');
   const $weatherCurrCity = document.querySelector('.weather__current-city');
   const $weatherCondition = document.querySelector('.weather__condition');
+  const $weatherCurrIcon = document.querySelector('.app__icon > img');
   const $weatherCurrStat = document.querySelector('.weather__stat-number');
   const $appCurrStat = document.querySelector('.app__stat-number');
   const $forecastList = document.querySelector('.forecast__list');
 
   // ③
   const setWeatherInfos = weatherInfos => {
+    // 요일 구하기
+    const todayInNumber = new Date().getDay();
+
+    const getDay = dayNumber => {
+      switch (dayNumber) {
+        case 0:
+          return 'SUN';
+        case 1:
+          return 'MON';
+        case 2:
+          return 'TUE';
+        case 3:
+          return 'WED';
+        case 4:
+          return 'THU';
+        case 5:
+          return 'FRI';
+        default:
+          return 'SUN';
+      }
+    };
+
+    const today = getDay(todayInNumber);
+    console.log(today);
     console.dir(weatherInfos);
     console.dir(weatherInfos.list);
   };
@@ -21,14 +46,15 @@ const weatherHandler = () => {
     $weatherCity.textContent = currWeatherInfos.name;
     $weatherCurrCity.textContent = currWeatherInfos.name;
     $weatherCondition.textContent = currWeatherInfos.weather[0].description;
-    $weatherCurrStat.textContent = Math.round(currWeatherInfos.main.temp);
-    $appCurrStat.textContent = Math.round(currWeatherInfos.main.temp);
+    $weatherCurrStat.textContent = `${Math.round(currWeatherInfos.main.temp)}°`;
+    $appCurrStat.textContent = `${Math.round(currWeatherInfos.main.temp)}°`;
     console.dir(currWeatherInfos);
   };
 
   const setWeatherIcons = currWeatherInfos => {
     const getIconUrl = `http://openweathermap.org/img/wn/${currWeatherInfos.weather[0].icon}@2x.png`;
     $weatherBtnIcon.setAttribute('src', getIconUrl);
+    $weatherCurrIcon.setAttribute('src', getIconUrl);
   };
 
   // ②
@@ -64,11 +90,15 @@ const weatherHandler = () => {
   document.addEventListener('DOMContentLoaded', getCityInfo);
 
   // 팝업
+  /*
   $weatherBtn.onclick = () => {
     if ($weatherApp.classList.contains('active')) {
       $weatherApp.classList.replace('active', 'hide');
-    } else $weatherApp.classList.replace('hide', 'active');
+    } else {
+      $weatherApp.classList.add('active');
+    }
   };
+  */
 
   // 요일 선택
   [...$forecastList.children].forEach(liNode => {

@@ -7,11 +7,21 @@
 @keyframes pop {
   0% { 
     opacity: 0;
+<<<<<<< HEAD
     transform: translate3d(70px, 10px);
     }
   100% { 
     opacity: 1;
     transform: translate3d(80px, 10px);
+=======
+    top: 70px;
+    right: 10px;
+    }
+  100% { 
+    opacity: 1;
+    top: 80px;
+    right: 10px;
+>>>>>>> ef7d9db30899b260121331a94d09f477f7b81f4b
     }
 }
 .transition {
@@ -30,9 +40,13 @@
   color: #222222;
 }
 
+.weather__tab {
+  position: relative;
+}
+
 .weather__button {
   background-color: transparent;
-  width: 95px;
+  /* width: 95px; */
   position: absolute;
   top: 10px;
   right: 10px;
@@ -40,11 +54,6 @@
   border-style: none;
   cursor: pointer;
   text-align: right;
-}
-
-.weather__tab-info {
-  float: right;
-  width: 90px;
 }
 
 .weather__button-icon,
@@ -74,6 +83,7 @@
   font-size: .8rem;
   color: #ffffff;
   opacity: .8;
+  white-space: nowrap;
 }
 
 .weather__app {
@@ -119,7 +129,6 @@
   display: inline-block;
   width: 70px;
   height: 70px;
-  vertical-align: bottom;
 }
 
 .forecast__list {
